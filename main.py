@@ -10,18 +10,6 @@ import coloredlogs
 log = logging.getLogger('RPC')
 coloredlogs.install()
 
-class Game:
-
-    def __init__(self, client_id: int, executable_name: str, icon_name: str):
-
-        self.executable_name = executable_name
-        self.client_id = client_id
-        self.icon_name = icon_name
-
-        self.isRunning = False
-        self.isRunningSince = None
-        self.PID = None
-
 def get_process_by_name(name: str):
 
     log.debug(f'Looking for process "{name}"')
@@ -39,6 +27,8 @@ games_data = json.load(open('games.json', 'r', encoding='utf-8'))
 log.info('Running.')
 
 while True:
+
+    exit_on_game_close = True if '--exit_on_game_close' in sys.argv else False
 
     for game in games_data.keys():
 
@@ -72,5 +62,8 @@ while True:
 
             log.debug('Game process finished. Stopping RPC')
             RPC.close()
+
+            if exit_on_game_close:
+                exit()
 
     time.sleep(2)
