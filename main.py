@@ -2,6 +2,7 @@ import pypresence
 import psutil
 import time
 import json
+import sys
 
 import logging
 import coloredlogs
@@ -71,3 +72,5 @@ while True:
 
             log.debug('Game process finished. Stopping RPC')
             RPC.close()
+
+    time.sleep(2)
