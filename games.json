@@ -1,0 +1,17 @@
+{
+    "SanAndreas.exe": {
+        "client_id": 908873058318684180,
+        "executable": "SanAndreas.exe",
+        "icon_name": "gtasa"
+    },
+    "ViceCity.exe":  {
+        "client_id": 908873719982751744,
+        "executable": "ViceCity.exe",
+        "icon_name": "gtavc"
+    },
+    "LibertyCity.exe": {
+        "client_id": 908873978649661441,
+        "executable": "LibertyCity.exe",
+        "icon_name": "gta3"
+    }
+}
